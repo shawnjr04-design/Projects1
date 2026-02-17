@@ -4,27 +4,65 @@ public class Pet {
 
     // Private data
     private String name;
+    private String type;
+    private int age;
 
     //  Public constructor
     public Pet() {
-        setName("Pet Name"); // using mutator inside constructor
+        setName("Pet Name");
+        setType("Animal");
+        setAge(1); // using mutator inside constructor
+    }
+    
+    public Pet(String type, String name, int age) {
+        setType(type);
+        setName(name);
+        setAge(age);
     }
 
     // Public set method
     public void setName(String name) {
         this.name = name;
     }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     // Public get method
     public String getName() {
         return name;
+    }
+    public String getType() {
+        return type;
+    }
+    public int getAge() {
+        return age;
+    }
+
+    public String speak() {
+        if (type.equalsIgnoreCase("dog")) {
+            return "Woof";
+
+        }
+        else if (type.equalsIgnoreCase("cat")) {
+            return "Meow";
+        }
+        else {
+            return "Yowl";
+        }
     }
 
     // Public toString() method
     public String toString() {
         String result = "";
         result += "Pet information:\n";
-        result += "Name: " + name;
+        result += "Type: " + type + "\n";
+        result += "Name: " + name + "\n";
+        result += "Sound: " + speak() + "\n";
+        result += "Age: " + age + "\n";
         return result;
     }
 
