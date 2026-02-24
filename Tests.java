@@ -1,21 +1,42 @@
-// Shawn Morgan 2/2/2026
-// The video confused me a bit, but I think the video was mainly just giving us an example of what to do but, not
-// exactly how we should do it right? 
+import java.util.Scanner;
+public class Tests {
 
-public class ShawnsTestScores {
-    public static void main(String[] args) {
-        // These are the 3 variables that hold decimal test scores. I made the numbers random
-        double score1 = 91.5;
-        double score2 = 67.1;
-        double score3 = 80.5;
+    private double average;
+    private int count;
 
-        // This calculates the average of the 3 scores
-        double average = (score1 + score2 + score3) / 3;
+    public Tests() {
+        average = Double.NaN;
+        count = 0;
+    }
 
-        // This will display the test scores and the average of the 3 test scores
-        System.out.println("Test score 1:   " + score1);
-        System.out.println("Test score 2:  " + score2);
-        System.out.println("Test score 3:  " + score3);
-        System.out.printf("The average of 3 test scores is:  %.2f", average);
+    public void getAverage() {
+        Scanner scnr = new Scanner(System.in);
+        double sum = 0;
+        count = 0;
+
+        System.out.println("Enter test scores (-1 to quit): ");
+        double score = scnr.nextDouble();
+
+        while (score != -1) {
+            sum += score;
+            count++;
+
+            System.out.println("Enter test scores (-1 to quit): ");
+            score = scnr.nextDouble();
+        }
+
+        if (count > 0) {
+            average = sum / count;
+        } else {
+            average = Double.NaN;
+        }
+        
+    }
+
+    @Override
+    public String toString() {
+        return "The average of the " + count +
+               " scores entered is " +
+               String.format("%.2f", average) + ".";
     }
 }
