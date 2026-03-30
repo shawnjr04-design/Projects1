@@ -4,7 +4,7 @@ public class Calc {
     private double num1;
     private double num2;
 
-    // my set methods
+    // My set methods
     public void setNum1(double n1) {
         num1 = n1;
     }
@@ -13,7 +13,7 @@ public class Calc {
         num2 = n2;
     }
 
-    // my get methods
+    // My get methods
     public double getNum1() {
         return num1;
     }
@@ -22,7 +22,7 @@ public class Calc {
         return num2;
     }
 
-    // my math methods
+    // My math methods
     public double add() {
         return num1 + num2;
     }
@@ -39,7 +39,7 @@ public class Calc {
         return num1 / num2;
     }
 
-    // my toString method 
+    // My toString method 
     public String toString() {
         return "Displaying private data fields using toString():\n"
                 + "Num1: " + num1 + "\n"
